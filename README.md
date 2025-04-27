@@ -1,6 +1,8 @@
 First real attempt at a functional web page from design to build.
 Raw coded - no frameworks
 
+You can view the live site here -> https://scotty-wkc.github.io/roofing-protoV2/
+
 # PAV-ROOFING-CUSTOM Website
 
 A modern, responsive website design for a professional roof tiling company. This project serves as a portfolio piece demonstrating web design skills for the roofing industry.

@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#navbarContainer {
+  display: flex;
+  padding: 0px 50px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  align-self: stretch;
+  border-bottom: 2px solid #3C525E;
+}
+
+#logoContainerHeader {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+#logoHeader {
+  width: 80px;
+  height: 80px;
+  aspect-ratio: 1/1;
+}
+
+#titleNavbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+#navCompanyTitle {
+  color: #3C525E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+#navLinksContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+#homeLink, #servicesLink, #aboutLink {
+  border-right: 2px solid #3C525E;
+  padding-right: 20px;
+}
+
+.navLink {
+  color: #3C525E;
+  text-decoration: none;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.navLink:hover {
+  color: #F4F1EB;
+}
