@@ -1,74 +1,235 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 #navbarContainer {
+  background-color: #1a202c;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
-  padding: 0px 50px;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-  align-self: stretch;
-  border-bottom: 2px solid #3C525E;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  height: 80px;
 }
 
 #logoContainerHeader {
   display: flex;
-  align-items: flex-start;
-  align-self: stretch;
+  align-items: center;
 }
 
 #logoHeader {
-  width: 80px;
-  height: 80px;
-  aspect-ratio: 1/1;
+  height: 50px;
+  margin-right: 10px;
 }
 
 #titleNavbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  align-self: stretch;
+  margin-right: auto;
 }
 
 #navCompanyTitle {
-  color: #3C525E;
-  text-align: center;
-  font-family: Inter;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#navCompanyTitle span {
+  color: #A67C52;
 }
 
 #navLinksContainer {
   display: flex;
-  justify-content: flex-end;
+  list-style: none;
   align-items: center;
-  gap: 20px;
-  flex: 1 0 0;
-  align-self: stretch;
-}
-
-#homeLink, #servicesLink, #aboutLink {
-  border-right: 2px solid #3C525E;
-  padding-right: 20px;
 }
 
 .navLink {
-  color: #3C525E;
+  color: #cbd5e0;
   text-decoration: none;
-  text-align: center;
-  font-family: Inter;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 10px 15px;
+  margin: 0 5px;
+  display: block;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 
-.navLink:hover {
-  color: #F4F1EB;
+.navLink:hover, .navLink.active {
+  color: #ffffff;
+  border-color: #A67C52;
+}
+
+/* Styling for active link */
+#homeLink[style*="color: #a67c52"] {
+  color: #ffffff !important;
+  border-color: #A67C52;
+}
+
+/* Quote Button Styling */
+#quoteButton {
+  background-color: #3C525E;
+  border: 1px solid #3C525E;
+  border-radius: 4px;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+#quoteButton a {
+  display: block;
+  padding: 10px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#quoteButton:hover {
+  background-color: transparent;
+  border-color: #A67C52;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#quoteButton:hover a {
+  color: #A67C52;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2d3748;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  border: 1px solid #A67C52;
+}
+
+.dropdown-content a {
+  color: #cbd5e0;
+  text-decoration: none;
+  padding: 12px 16px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #1a202c;
+  color: #A67C52;
+}
+
+#servicesDropdown:hover .dropdown-content {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Phone container styles */
+#phoneContainer {
+  display: flex;
+  align-items: center;
+  margin-left: auto; 
+}
+
+#phoneLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #cbd5e0; 
+  font-size: 22px;
+  font-weight: 500;
+  gap: 8px; 
+  padding: 10px 15px; 
+  border: 1px solid transparent; 
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+#phoneLink:hover {
+  color: #ffffff; 
+  border-color: #a67c52; 
+  background-color: #1a202c; 
+}
+
+#phoneNumber {
+  font-size: 22px;
+}
+
+/* Mobile Navigation */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #cbd5e0;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  #navbarContainer {
+    height: 70px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+  
+  #titleNavbar {
+    text-align: center;
+    margin-right: 0;
+  }
+  
+  .nav-toggle {
+    display: block;
+    order: 3;
+  }
+  
+  #navLinksContainer {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    flex-direction: column;
+    background-color: #1a202c;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  #navLinksContainer.active {
+    left: 0;
+  }
+  
+  .navLink {
+    margin: 10px 0;
+    width: 100%;
+  }
+  
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    background-color: #2d3748;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Adjustments to main content for fixed navbar */
+#mainContainer {
+  padding-top: 80px;
 }

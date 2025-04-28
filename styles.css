@@ -81,11 +81,6 @@ body:hover {
   align-self: stretch;
 }
 
-#homeLink, #servicesLink, #aboutLink {
-  border-right: 2px solid #3C525E;
-  padding-right: 20px;
-}
-
 .navLink {
   color: #3C525E;
   text-decoration: none;
@@ -180,7 +175,7 @@ body:hover {
   align-self: stretch;
 }
 
-#quoteButton {
+#servButton {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,20 +191,20 @@ body:hover {
   line-height: normal;
 }
 
-#quoteButton:hover {
+#servButton:hover {
   /* color: #F4F1EB; */
   color: #A67C52;
 
 }
 
-#quoteButton span {
+#servButton span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-#quoteButton span:after {
+#servButton span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -218,11 +213,11 @@ body:hover {
   transition: 0.5s;
 }
 
-#quoteButton:hover span {
+#servButton:hover span {
   padding-right: 25px;
 }
 
-#quoteButton:hover span:after {
+#servButton:hover span:after {
   opacity: 1;
   right: 0;
 }
