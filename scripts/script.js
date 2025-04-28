@@ -3,8 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const dropdownContent = document.querySelector('.dropdown-content');
 
   dropdownToggle.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent default link behavior
-    dropdownContent.classList.toggle('show'); // Toggle visibility
+    // Only prevent default if the dropdown content is toggled
+    if (dropdownContent.classList.contains('show')) {
+      event.preventDefault();
+    }
+    dropdownContent.classList.toggle('show');
   });
 
   // Close dropdown if clicked outside
@@ -13,5 +16,4 @@ document.addEventListener('DOMContentLoaded', () => {
       dropdownContent.classList.remove('show');
     }
   });
-
 });

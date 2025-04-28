@@ -1,0 +1,110 @@
+.services-section {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 36px;
+  color: #3c525e;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.service-title {
+  font-size: 24px;
+  color: #3c525e;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Style for the "Learn More" links */
+.service-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #a67c52; /* Same color as the quoteButton */
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.service-link:hover {
+  background-color: #8b643e; /* Slightly darker shade for hover effect */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.service-link:active {
+  transform: scale(0.95); /* Slight shrink effect on click */
+}
+
+/* Container for testimonials and reviews */
+.testimonials-section,
+.google-reviews-section {
+  padding: 40px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.testimonials-section .testimonial-container,
+.google-reviews-section .google-review-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between reviews */
+  flex-wrap: wrap; /* Wrap to the next line if there's not enough space */
+}
+
+.google-review-container {
+  margin-bottom: 50px;
+}
+
+.testimonial,
+.google-review {
+  background-color: #f4f1eb;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 350px; /* Limit the width of each review */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  flex: 1 1 calc(33.33% - 20px); /* Responsive width for 3 columns */
+}
+
+.testimonial-text,
+.review-text {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.testimonial-author,
+.review-author {
+  font-size: 14px;
+  color: #3c525e;
+  font-weight: bold;
+}
