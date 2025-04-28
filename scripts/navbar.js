@@ -2,7 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbarPlaceholder = document.getElementById("navbarPlaceholder");
 
   if (navbarPlaceholder) {
-    fetch("/roofing-protoV2/components/navbar.html")
+    // For GitHub Pages, include the repository name in the path
+    fetch("/components/navbar.html")
+      .then(response => {
+        if (!response.ok) {
+          // Try a relative path as fallback
+          return fetch("./components/navbar.html");
+        }
+        return response;
+      })
       .then(response => {
         if (!response.ok) {
           throw new Error(`Failed to load navbar (status ${response.status})`);
@@ -12,31 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         navbarPlaceholder.innerHTML = data;
         
-        // Initialize navbar toggle functionality
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinksContainer');
-        
-        if (navToggle && navLinks) {
-          navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-          });
-        }
-        
-        // Handle dropdown on mobile
-        if (window.innerWidth < 992) {
-          const servicesDropdown = document.getElementById('servicesDropdown');
-          if (servicesDropdown) {
-            servicesDropdown.addEventListener('click', function(e) {
-              if (window.innerWidth < 992) {
-                const dropdownContent = this.querySelector('.dropdown-content');
-                if (dropdownContent) {
-                  dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-                  e.preventDefault();
-                }
-              }
-            });
-          }
-        }
+        // Dispatch a custom event to notify other scripts that the navbar is loaded
+        document.dispatchEvent(new CustomEvent('navbarLoaded'));
       })
       .catch(error => {
         console.error("Error loading navbar:", error);
@@ -46,5 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
       });
+  }
+});
+
+// Initialize mobile toggle functionality
+document.addEventListener('navbarLoaded', () => {
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinksContainer');
+  
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
   }
 });
