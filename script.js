@@ -13,4 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
       dropdownContent.classList.remove('show');
     }
   });
+
 });

@@ -17,7 +17,7 @@ body {
 }
 
 a {
-  color: #3C525E;
+  color: inherit;
   cursor: pointer;
   text-decoration: none;
 }
@@ -103,7 +103,7 @@ body:hover {
 }
 
 .navLink:hover {
-  color: #F4F1EB;
+  color: #A67C52;
 }
 
 #mainContainer {
@@ -116,7 +116,7 @@ body:hover {
 
 #mainContentContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -125,9 +125,11 @@ body:hover {
 
 #mainContentHousing {
   display: flex;
-  padding-top: 100px;
+  margin-top: 120px;
   align-items: flex-start;
   align-self: stretch;
+  border-radius: 20px;
+  background-color: #F4F1EB;
 }
 
 #mainContent {
@@ -137,6 +139,7 @@ body:hover {
   align-items: flex-start;
   gap: 30px;
   flex: 1 0 0;
+  padding-left: 10px;
 }
 
 #companyHeading {
@@ -171,8 +174,7 @@ body:hover {
 
 #mainDescriptiveContentContainerFiller {
   display: flex;
-  padding: 10px;
-  align-items: flex-start;
+  justify-content: end;
   gap: 10px;
   flex: 1 0 0;
   align-self: stretch;
@@ -188,14 +190,16 @@ body:hover {
   color: #3C525E;
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  font-size: 25px;
+  font-size: 35px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
 
 #quoteButton:hover {
-  color: #F4F1EB;
+  /* color: #F4F1EB; */
+  color: #A67C52;
+
 }
 
 #quoteButton span {
@@ -221,6 +225,10 @@ body:hover {
 #quoteButton:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+#mainDescriptiveContentImage{
+  border-radius: 20px;
 }
 
 #footerContainer {
@@ -280,6 +288,7 @@ body:hover {
   display: none;
   position: absolute;
   background-color: #F4F1EB;
+  border-radius: 10%;
   max-width: 156px;
   margin-left: -20px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -303,8 +312,8 @@ body:hover {
 }
 
 .dropdown-content a:hover {
-  background-color: #3C525E;
-  color: #F4F1EB;
+  color: #A67C52;
+
 }
 
 .dropdown:hover .dropdown-content {
@@ -321,4 +330,9 @@ footer {
     left: 0;
     width: 100%;
     z-index: 100;
+}
+
+#instagramLogo:hover, #facebookLogo:hover{
+  color: #A67C52;
+  transition: 0.5s;
 }
