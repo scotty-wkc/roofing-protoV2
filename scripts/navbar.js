@@ -3,17 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (navbarPlaceholder) {
     fetch("/components/navbar.html")
-      .then((response) => response.text())
-      .then((data) => {
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to load navbar (status ${response.status})`);
+        }
+        return response.text();
+      })
+      .then(data => {
         navbarPlaceholder.innerHTML = data;
         
-        // Initialize navbar toggle functionality after loading
+        // Initialize navbar toggle functionality
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinksContainer');
         
         if (navToggle && navLinks) {
           navToggle.addEventListener('click', () => {
-              navLinks.classList.toggle('active');
+            navLinks.classList.toggle('active');
           });
         }
         
@@ -33,10 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       })
-      .catch((error) => {
+      .catch(error => {
         console.error("Error loading navbar:", error);
-        // Show error to help debugging
-        navbarPlaceholder.innerHTML = "Error loading navbar. Check console for details.";
+        navbarPlaceholder.innerHTML = `
+          <div style="background-color: #1a202c; color: white; padding: 20px; text-align: center;">
+            Error loading navbar. Check console for details.
+          </div>
+        `;
       });
   }
 });
