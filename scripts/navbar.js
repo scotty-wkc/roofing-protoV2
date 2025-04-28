@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbarPlaceholder = document.getElementById("navbarPlaceholder");
 
   if (navbarPlaceholder) {
-    fetch("/components/navbar.html")
+    fetch("/roofing-protoV2/components/navbar.html")
       .then(response => {
         if (!response.ok) {
           throw new Error(`Failed to load navbar (status ${response.status})`);
