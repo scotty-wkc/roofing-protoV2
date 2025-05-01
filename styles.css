@@ -101,6 +101,10 @@ body:hover {
   color: #A67C52;
 }
 
+#navbarPlaceholder {
+  margin-bottom: 80px;
+}
+
 #mainContainer {
   display: flex;
   padding: 0px 50px 0px 50px;
