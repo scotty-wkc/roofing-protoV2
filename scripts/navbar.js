@@ -3,18 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (navbarPlaceholder) {
     // For GitHub Pages, include the repository name in the path
-    fetch("/components/navbar.html")
+    fetch("/navbar/components/navbar.html")
       .then(response => {
         if (!response.ok) {
           // Try a relative path as fallback
-          return fetch("./components/navbar.html");
+          return fetch("./navbar/components/navbar.html");
         }
         return response;
       })
       .then(response => {
         if (!response.ok) {
           // Try another relative path as a secondary fallback
-          return fetch("../components/navbar.html");
+          return fetch("../navbar/components/navbar.html");
         }
         return response;
       })
