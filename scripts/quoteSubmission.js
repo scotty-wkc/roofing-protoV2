@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updatePriceEstimate() {
-    const houseSizeValue = houseSize.value;
-    const tileTypeValue = tileType.value;
+    const houseSizeValue = houseSize ? houseSize.value : "";
+    const tileTypeValue = tileType ? tileType.value : "";
 
     const priceRanges = {
       small: {
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (houseSizeValue && tileTypeValue) {
       priceEstimate.textContent = `Estimated Price Range: ${
-        priceRanges[houseSizeValue][tileTypeValue] || "Contact us for a custom quote"
+        priceRanges[houseSizeValue]?.[tileTypeValue] || "Contact us for a custom quote"
       }`;
     } else {
       priceEstimate.textContent = "";
