@@ -9,7 +9,7 @@ document.getElementById("tileType").addEventListener("change", function () {
 });
 
 document.getElementById("quoteForm").addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent default form submission
+  event.preventDefault(); 
 
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
@@ -22,5 +22,5 @@ document.getElementById("quoteForm").addEventListener("submit", function (event)
   }
 
   alert("Thank you for submitting your quote request! Redirecting...");
-  window.location.href = "./navOptions/quoteSubmission.html"; // Redirect to quoteSubmission.html
+  window.location.href = "./navOptions/quoteSubmission.html";
 });
