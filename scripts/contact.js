@@ -1,7 +1,6 @@
-  // Handle contact form submission
   const contactForm = document.getElementById('contactForm');
   contactForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
 
     const email = document.getElementById('email').value;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -11,13 +10,8 @@
       return false;
     }
 
-    // Additional validation can go here
-
-    // Show a success message
     alert('Thank you for your message! We will get back to you soon.');
 
-    // this.submit();
 
-    // Redirect to index.html
     window.location.href = './submission.html';
   });
