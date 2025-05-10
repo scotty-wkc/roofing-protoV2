@@ -123,7 +123,7 @@
   pointer-events: none;
 }
 
-/* Responsive adjustments
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-form .form-row {
       flex-direction: column;
@@ -133,4 +133,97 @@
   .contact-form-container {
       padding: 30px 20px;
   }
-} */
+}
+
+/* Small Devices (Mobile Phones) */
+@media (max-width: 600px) {
+  .contact-form .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-form-container {
+    padding: 20px;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  .contact-form-container,
+  .submission-container {
+    padding: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-group {
+    min-width: 100%;
+  }
+
+  .navLink {
+    font-size: 18px;
+  }
+
+  .custom-house-size-container input {
+    padding-right: 30px;
+  }
+
+  .unit-label {
+    margin-left: -30px;
+    font-size: 12px;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 768px) {
+  .contact-form-container,
+  .submission-container {
+    padding: 30px;
+  }
+
+  .form-row {
+    gap: 15px;
+  }
+
+  .navLink {
+    font-size: 20px;
+  }
+
+  .custom-house-size-container input {
+    padding-right: 35px;
+  }
+
+  .unit-label {
+    margin-left: -35px;
+    font-size: 14px;
+  }
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 1024px) {
+  .contact-form-container,
+  .submission-container {
+    padding: 40px;
+  }
+
+  .form-row {
+    gap: 20px;
+  }
+
+  .navLink {
+    font-size: 22px;
+  }
+
+  .custom-house-size-container input {
+    padding-right: 40px;
+  }
+
+  .unit-label {
+    margin-left: -40px;
+    font-size: 16px;
+  }
+}

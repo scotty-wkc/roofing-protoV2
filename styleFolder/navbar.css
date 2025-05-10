@@ -233,3 +233,106 @@
 #mainContainer {
   padding-top: 80px;
 }
+
+/* Small Devices (Mobile Phones) */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .contact-form-container,
+  .submission-container {
+    padding: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-group {
+    min-width: 100%;
+  }
+
+  .navLink {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  .custom-house-size-container input {
+    padding-right: 30px;
+  }
+
+  .unit-label {
+    margin-left: -30px;
+    font-size: 12px;
+  }
+
+  #navbarContainer {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  #navLinksContainer {
+    flex-direction: column;
+    display: none;
+  }
+
+  #navLinksContainer.active {
+    display: flex;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 768px) {
+  .contact-form-container,
+  .submission-container {
+    padding: 30px;
+  }
+
+  .form-row {
+    gap: 15px;
+  }
+
+  .navLink {
+    font-size: 20px;
+  }
+
+  .custom-house-size-container input {
+    padding-right: 35px;
+  }
+
+  .unit-label {
+    margin-left: -35px;
+    font-size: 14px;
+  }
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 1024px) {
+  .contact-form-container,
+  .submission-container {
+    padding: 40px;
+  }
+
+  .form-row {
+    gap: 20px;
+  }
+
+  .navLink {
+    font-size: 22px;
+  }
+
+  .custom-house-size-container input {
+    padding-right: 40px;
+  }
+
+  .unit-label {
+    margin-left: -40px;
+    font-size: 16px;
+  }
+}
