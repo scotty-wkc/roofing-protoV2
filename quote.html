@@ -56,13 +56,18 @@
                 <option value="large">Large (200-300 sqm)</option>
                 <option value="other">Other</option>
               </select>
-              <input
-                type="text"
-                id="customHouseSize"
-                name="customHouseSize"
-                placeholder="Enter custom size"
+              <div
+                class="custom-house-size-container"
                 style="display: none; margin-top: 10px"
-              />
+              >
+                <input
+                  type="text"
+                  id="customHouseSize"
+                  name="customHouseSize"
+                  placeholder="Enter custom size"
+                />
+                <span class="unit-label">sqm</span>
+              </div>
             </div>
           </div>
 
@@ -166,3 +171,4 @@
     <script src="./scripts/quote.js"></script>
   </body>
 </html>
+```

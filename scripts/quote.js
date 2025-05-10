@@ -1,6 +1,6 @@
 document.getElementById("houseSize").addEventListener("change", function () {
-  const customHouseSize = document.getElementById("customHouseSize");
-  customHouseSize.style.display = this.value === "other" ? "block" : "none";
+  const customHouseSizeContainer = document.querySelector(".custom-house-size-container");
+  customHouseSizeContainer.style.display = this.value === "other" ? "flex" : "none";
 });
 
 document.getElementById("tileType").addEventListener("change", function () {
