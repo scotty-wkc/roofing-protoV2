@@ -138,7 +138,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Phone container styles */
+/* Phone Container */
 #phoneContainer {
   display: flex;
   align-items: center;
@@ -163,10 +163,6 @@
   color: #ffffff;
   border-color: #a67c52;
   background-color: #1a202c;
-}
-
-#phoneNumber {
-  font-size: 22px;
 }
 
 /* Mobile Navigation */
@@ -215,17 +211,16 @@
   }
 
   #phoneContainer {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #1a202c;
-    padding: 5px 10px;
-    border-radius: 4px;
+    display: none; /* Hide the phone number in the main navbar */
   }
 
-  #phoneLink {
-    color: #ffffff;
+  #navLinksContainer.active::after {
+    content: "Phone: +61 412 345 678";
+    color: #cbd5e0;
     font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+    display: block;
   }
 }
 
