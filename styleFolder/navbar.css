@@ -1,3 +1,4 @@
+/* General Navbar Styles */
 #navbarContainer {
   background-color: #1a202c;
   position: fixed;
@@ -141,27 +142,27 @@
 #phoneContainer {
   display: flex;
   align-items: center;
-  margin-left: auto; 
+  margin-left: auto;
 }
 
 #phoneLink {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #cbd5e0; 
+  color: #cbd5e0;
   font-size: 22px;
   font-weight: 500;
-  gap: 8px; 
-  padding: 10px 15px; 
-  border: 1px solid transparent; 
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid transparent;
   border-radius: 4px;
   transition: all 0.3s ease;
 }
 
 #phoneLink:hover {
-  color: #ffffff; 
-  border-color: #a67c52; 
-  background-color: #1a202c; 
+  color: #ffffff;
+  border-color: #a67c52;
+  background-color: #1a202c;
 }
 
 #phoneNumber {
@@ -178,27 +179,17 @@
   cursor: pointer;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   #navbarContainer {
     height: 70px;
     padding: 0 20px;
-    flex-wrap: wrap;
   }
-  
-  #titleNavbar {
-    text-align: center;
-    margin-right: 0;
-  }
-  
-  .nav-toggle {
-    display: block;
-    order: 3;
-  }
-  
+
   #navLinksContainer {
+    display: none;
     position: fixed;
     top: 70px;
-    left: -100%;
+    right: 0;
     flex-direction: column;
     background-color: #1a202c;
     width: 100%;
@@ -208,33 +199,56 @@
     padding: 10px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   #navLinksContainer.active {
-    left: 0;
+    display: flex;
   }
-  
+
   .navLink {
     margin: 10px 0;
     width: 100%;
   }
-  
-  .dropdown-content {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    background-color: #2d3748;
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  .nav-toggle {
+    display: block;
+    order: 3;
+  }
+
+  #phoneContainer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #1a202c;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+
+  #phoneLink {
+    color: #ffffff;
+    font-size: 18px;
   }
 }
 
-/* Adjustments to main content for fixed navbar */
-#mainContainer {
-  padding-top: 80px;
+@media (max-width: 700px) {
+  #phoneContainer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #1a202c;
+    z-index: 1001;
+  }
+
+  #navLinksContainer {
+    top: 60px;
+    right: 0;
+    background-color: #1a202c;
+  }
+
+  .nav-toggle {
+    color: #ffffff;
+  }
 }
 
-/* Small Devices (Mobile Phones) */
 @media (max-width: 600px) {
   body {
     padding: 10px;
@@ -287,7 +301,6 @@
   }
 }
 
-/* Medium Devices (Tablets) */
 @media (max-width: 768px) {
   .contact-form-container,
   .submission-container {
@@ -312,7 +325,6 @@
   }
 }
 
-/* Large Devices (Desktops) */
 @media (min-width: 1024px) {
   .contact-form-container,
   .submission-container {
