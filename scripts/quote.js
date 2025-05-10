@@ -8,7 +8,7 @@ document.getElementById("tileType").addEventListener("change", function () {
   customTileType.style.display = this.value === "other" ? "block" : "none";
 });
 
-document.getElementById("quoteForm").addEventListener("submit", function (event) {
+document.getElementById("quoteForm").addEventListener("submit", (event) => {
   event.preventDefault();
 
   const houseSize = document.getElementById("houseSize").value;
