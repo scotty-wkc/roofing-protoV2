@@ -9,18 +9,20 @@ document.getElementById("tileType").addEventListener("change", function () {
 });
 
 document.getElementById("quoteForm").addEventListener("submit", function (event) {
-  event.preventDefault(); 
+  event.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
   const houseSize = document.getElementById("houseSize").value;
   const tileType = document.getElementById("tileType").value;
 
-  if (!name || !email || !houseSize || !tileType) {
+  if (!houseSize || !tileType) {
     alert("Please fill out all required fields.");
     return;
   }
 
-  alert("Thank you for submitting your quote request! Redirecting...");
-  window.location.href = "./navOptions/quoteSubmission.html";
+  const queryParams = new URLSearchParams({
+    houseSize,
+    tileType,
+  });
+
+  window.location.href = `./navOptions/quoteSubmission.html?${queryParams.toString()}`;
 });
