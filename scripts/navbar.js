@@ -39,6 +39,20 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
       });
   }
+
+  const navToggle = document.getElementById("navToggle");
+  const closeToggle = document.getElementById("closeToggle");
+  const navLinksContainer = document.getElementById("navLinksContainer");
+
+  // Open the dropdown menu
+  navToggle.addEventListener("click", () => {
+    navLinksContainer.classList.add("active");
+  });
+
+  // Close the dropdown menu
+  closeToggle.addEventListener("click", () => {
+    navLinksContainer.classList.remove("active");
+  });
 });
 
 // Initialize mobile toggle functionality
